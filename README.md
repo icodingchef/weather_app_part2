@@ -1,16 +1,36 @@
 # weather_app_part2
 
-A new Flutter project.
+코딩셰프의 Flutter 순한 맛 소스코드 
 
-## Getting Started
+## 프로젝트에서 사용할 코드
 
-This project is a starting point for a Flutter application.
+1. AndroidManifest.xml 파일에 geolocator 퍼미션 추가
+<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
-A few resources to get you started if this is your first Flutter project:
+2. IOS Info.plist 파일에 geolocator 퍼미션 추가
+<key>NSLocationWhenInUseUsageDescription</key>
+<string>This app needs access to location when open.</string>
+<key>NSLocationAlwaysUsageDescription</key>
+<string>This app needs access to location when in the background.</string>
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+3. geolocation 패키지의 [getCurrentPosition()] 메서드 사용 예시 코드 
+- import 'package:geolocator/geolocator.dart'; // 패키지 임포트용
+- Position position = await Geolocator.getCurrentPosition(desiredAccuracy: LocationAccuracy.high);
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+4. 위치 서비스 권한 추가 코드
+LocationPermission permission = await Geolocator.requestPermission();
+
+5. 인터넷 사용 권한 추가
+<uses-permission android:name="android.permission.INTERNET" />
+
+6. http 패키지 임포트
+import 'package:http/http.dart' as http; 
+
+7. OpenWeatherMap 더미 데이터 페이지 url
+https://samples.openweathermap.org/data/2.5/weather?q=London&appid=b1b15e88fa797225412429c1c50c122a1
+
+8. OpenWeatherMap API 주소
+https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API key}
+
+
+
