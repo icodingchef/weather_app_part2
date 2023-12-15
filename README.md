@@ -2,41 +2,11 @@
 
 코딩셰프의 Flutter 순한 맛 소스코드 
 
-## 프로젝트에서 사용할 코드
+## 15장 날씨 앱
 
-1. AndroidManifest.xml 파일에 geolocator 퍼미션 추가
-<!--
-- <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
--->
+이번 장에서는 앱을 실행하면 날씨 데이터를 가져오는 동안 잠시 로딩 인디케이터가 보여지고, 데이터가 다 전달이 되면 화면 이동을 통해서 현재 내가 위치하고 있는 도시명과 기온, 그리고 날씨 아이콘을 보여주는 날씨 앱을 만들어 봅니다.
 
-2. IOS Info.plist 파일에 geolocator 퍼미션 추가
-<!--
-- <key>NSLocationWhenInUseUsageDescription</key>
-- <string>This app needs access to location when open.</string>
-- <key>NSLocationAlwaysUsageDescription</key>
-- <string>This app needs access to location when in the background.</string>
--->
 
-3. geolocation 패키지의 [getCurrentPosition()] 메서드 사용 예시 코드 
-- import 'package:geolocator/geolocator.dart'; // 패키지 임포트용
-- Position position = await Geolocator.getCurrentPosition(desiredAccuracy: LocationAccuracy.high);
-
-4. 위치 서비스 권한 추가 코드
-- LocationPermission permission = await Geolocator.requestPermission();
-
-5. 인터넷 사용 권한 추가
-<!--
-- <uses-permission android:name="android.permission.INTERNET" />
--->
-
-6. http 패키지 임포트
-- import 'package:http/http.dart' as http; 
-
-7. OpenWeatherMap 더미 데이터 페이지 url
-- https://samples.openweathermap.org/data/2.5/weather?q=London&appid=b1b15e88fa797225412429c1c50c122a1
-
-8. OpenWeatherMap API 주소
-- https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API key}
 
 
 
